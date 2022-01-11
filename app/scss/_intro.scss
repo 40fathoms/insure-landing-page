@@ -1,0 +1,156 @@
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    background: $darkViolet;
+    height: 63.375rem;
+
+    @include breakpoint-up(large){
+        height: 39.1875rem;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5.94375rem 10.1875rem;
+    }
+
+
+    >span{
+        display: none;
+        background-color: $veryLightGray;
+        width: 8rem;
+        height: 0.05rem;
+        @include breakpoint-up(large){
+            display: block;
+        }
+    }
+
+    &_background{
+        background-image: url("../images/image-intro-mobile.jpg");
+        background-size: cover;
+        background-position: center center;
+        max-width: 23.4375rem;
+        max-height: 28.125rem;
+        width: 100vw;
+        height: 120vw;  
+        z-index: 3;  
+
+        @include breakpoint-up(large){
+            background-image: url("../images/image-intro-desktop.jpg");
+            background-size: cover;
+            background-position: center center;
+            min-width: 23.4375rem;
+            min-height: 28.125rem;
+            width: 37.292vw;
+            height: 43.33vw;
+            max-width: 33.5625rem;
+            max-height: 39rem;
+            position: absolute;
+            right: 11.5%;
+            top: 17%;
+        }
+    }
+
+    &_pattern_background{
+        position: absolute;
+        width: 100%;
+        height: 120%;
+
+        @include breakpoint-down(xsmall){
+            height: 150%;
+            background-image: 
+            url("../images/bg-pattern-intro-left-mobile.svg"),
+            url("../images/bg-pattern-intro-right-mobile.svg");
+            background-repeat: no-repeat, no-repeat;
+            background-position: 0 120vw, 100% 225vw;
+            background-size: 55% auto, 40% auto;
+            z-index: 3;
+        }
+
+        @include breakpoint-up(small){
+            background-image: 
+            url("../images/bg-pattern-intro-left-desktop.svg"),
+            url("../images/bg-pattern-intro-right-desktop.svg");
+            background-repeat: no-repeat, no-repeat;
+            background-position: 0 70%, 100% 0;
+            background-size: 35% auto, 45% auto;
+        }
+
+        @include breakpoint-up(large){
+            background-size: 14% auto, 25% auto;
+            z-index: 6;
+        }
+
+        @include breakpoint-up(xlarge){
+            background-size: 13% auto, 25% auto;
+        }
+    }
+
+    &_text{
+
+        text-align: center;
+        color: $veryLightGray; 
+        z-index: 6;
+
+        @include breakpoint-up(large){
+            text-align: start;
+            margin: 0;    
+        }
+        
+
+        h2{
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            font-size: 2.4rem;
+            margin: 1rem auto auto auto;
+            width: 80%;
+
+            @include breakpoint-up(large){
+                text-align: start;
+                margin: 0; 
+                width: 46%; 
+                font-size:2.525rem;  
+            }
+
+            @include breakpoint-up(xlarge){
+                width: 45%; 
+                font-size: 4.325rem; 
+            }
+        }
+
+        p{
+            font-family: 'Karla', sans-serif;
+            font-size: 1.15rem;
+            margin: 1.5rem auto auto auto;
+            line-height: 1.42;
+            width: 90%;
+
+            @include breakpoint-up(large){
+                text-align: start;
+                margin: 1.5rem 0 0 0;   
+                width: 47%; 
+            }
+        }
+    }
+
+    &_viewPlans{
+        color: $veryLightGray;
+        background: transparent;
+        border: 2px solid $veryLightGray;
+        margin: 0.2rem auto 0rem auto;
+        padding: 0.75rem 1.5625rem;
+        font-family: 'Karla', sans-serif;        
+        letter-spacing: 0.15rem;
+        z-index: 6;
+
+        @include breakpoint-up(large){
+            text-align: start;
+            margin: 0;
+        }
+
+        &:hover{
+            background: $veryLightGray;
+            color: $veryDarkViolet;
+        }
+    }
+}

@@ -1,0 +1,121 @@
+.navbar{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.9375rem 1.4375rem;
+
+    @include breakpoint-up(large){
+        padding: 0.94375rem 10.1875rem;
+    }
+
+    &_logo{
+        img{
+            height: 1.25rem;
+            width: 6.9375rem;
+        }
+    }
+
+    &_hamburger{
+        @include breakpoint-up(large){
+            display: none;
+        }
+
+        &.active{
+            display: none;
+        }
+
+        img{
+            height: 1.9375rem;
+            width: 1.9375rem;
+        }
+    }
+
+    &_close{
+
+        display: none;
+
+        @include breakpoint-up(large){
+            display: none;
+        }
+
+        &.active{
+            display: block;
+        }
+
+        img{
+            height: 1.9375rem;
+            width: 1.9375rem;
+        }
+    }
+
+    &_links_desktop{
+        display: flex;
+        flex-direction: row;
+
+        a{
+            color: $darkGrayishViolet;
+            font-family:'Karla', sans-serif;
+            letter-spacing: 0.1rem;
+            font-size: 0.8rem;
+            padding: 0.875rem 1.0625rem;
+            font-weight: bold;
+
+            &:last-child{
+                color: $veryDarkViolet;
+                border: 2px solid $veryDarkViolet;
+                margin-left: 1.0625rem;
+                padding: 0.75rem 1.5625rem;
+
+                &:hover{
+                    background: $veryDarkViolet;
+                    color: $veryLightGray;
+                }
+            }
+
+            &:hover{
+                color: $darkViolet;
+            }
+        }
+
+        @include breakpoint-down(medium){
+            display: none;
+        }
+    }
+}
+
+.navbar_links_mobile{
+    background-color: $veryDarkViolet;
+    height: 87vh;
+    
+    display: none;
+
+    background-image: url("../images/bg-pattern-mobile-nav.svg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+
+    &.active{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    a{
+        display: block;
+        color: $veryLightGray;
+        font-family:'Karla', sans-serif;
+        letter-spacing: 0.15rem;
+        font-size: 1.2rem;
+        text-align: center;
+
+        width: 86.7%;
+        margin-top: 1.15rem;
+        padding: 1.075rem;
+
+        &:last-child{
+            border: 1px solid $veryLightGray;
+        }
+    }
+}
